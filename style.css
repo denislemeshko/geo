@@ -1,7 +1,46 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+  }
+  a {
+    text-decoration: none;
+    outline: none;
+    color: #373737;
+  }
+
+  ul[class],
+  ol[class] {
+    list-style: none;
+    text-decoration: none;
+  }
+
+  input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+  img {
+    max-width: 100%;
+    display: block;
+  }
 
 body {
     font-family: 'Roboto', sans-serif;
     color: #373737;
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.5;
 }
 
 .btn-primar{
@@ -10,6 +49,7 @@ body {
     font-size: 14px;
     line-height: 17px;
     border-color: #ff9d00;
+
     }
 .btn-primar:hover {
     background-color: #ff9d00;
@@ -17,15 +57,11 @@ body {
 }
 
 
-/* header */
-/* .navbar {
-    padding: 15px 0;
-} */
-
 .navbar-brand img{
     width: 30px;
     height: 30px;
     margin-right: 8px;
+    display: inline-block;
 }
 
 .navbar-brand .btn{
@@ -236,6 +272,165 @@ input[name="phone"] {
     justify-content: center;
 }
 
+/* Section  cat*/
+
+.cat {
+    margin: 40px 200px;
+}
+
+.cat-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px 10px;
+    flex-wrap: wrap;
+}
+
+.cat-link {
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 400;
+    padding: 2px 4px;
+}
+
+.cat-link:hover {
+    text-decoration: underline;
+}
+
+/* Section  Product*/
+
+.product {
+    margin-bottom: 60px;
+}
+
+.product-title {
+    display: block;
+    text-align: center;
+    font-weight: 500;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    font-size: 27px;
+}
+.product__inner {
+    padding: 0 auto;
+}
+
+.card {
+    color: #373737;
+     max-width: 400px;
+    min-height: 405px;
+    padding: 10px 20px;
+
+}
+.card img {
+    height: 200px;
+	object-fit: cover;
+
+}
+.btn-block {
+    text-align: center;
+}
+
+.card-title {
+    font-size: 18px;
+    display: block;
+    text-align: center;
+    margin: 20px auto;
+}
+
+.card-title:hover {
+    text-decoration: underline;
+}
+.card-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 55px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.btn-detal {
+    border: 1px solid #373737;
+    margin-right: 15px;
+}
+.btn-detal:hover {
+    color:#fff;
+    background-color: #373737;
+}
+.btn.zam {
+    /* height: 45px; */
+    padding: 11px 15px;
+}
+.load {
+    margin: 30px auto 0 auto;
+    text-align: center;
+
+    height: 60px;
+    padding: 0 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFF;
+    border-radius: 5px;
+    border: 1px solid #ff9d00;
+    background-color: #ff9d00;
+}
+
+/* Bootom */
+
+.bottom {
+    margin-bottom: 60px;
+}
+
+.bottom__inner {
+    display: flex;
+    justify-content:center;
+}
+
+.bottom__inner-img {
+    flex-basis: 466px;
+    max-width:466px;
+}
+
+.bottom__inner-img img{
+    max-width:466px;
+}
+
+.bottom__inner-info {
+    flex-basis: 325px;
+}
+.bottom-title {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 22px;
+    color: #fff;
+    padding: 17px 0 17px 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+    background-color: #ff9d00;
+}
+.bottom-text {
+    display: inline-block;
+    line-height: 1.5;
+    opacity: .7;
+    color: #373737;
+    margin-left: 20px;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+
+
+/* Footer */
+
+.footer {
+    background-color: #ebf8e1;
+}
+
+
+
+/* MEDIA */
 @media (max-width: 1200px) {
     .phone::after {
         display: none;
@@ -259,6 +454,20 @@ input[name="phone"] {
     input[name="phone"] {
         max-width: 760px;
     }
+
+    .bottom__inner {
+        flex-direction: column;
+    }
+
+    .bottom__inner-info {
+        order: -1;
+        flex-basis: 210px;
+    }
+
+    .bottom__inner-img{
+        max-width: 100%;
+    }
+
 }
 
 @media (max-width: 768px) {
@@ -271,6 +480,9 @@ input[name="phone"] {
     }
     .navbar-brand img{
         margin-right: 0px;
+    }
+    .card {
+        margin: 10px 0;
     }
 }
 
@@ -323,7 +535,37 @@ input[name="phone"] {
         text-align: center;
     }
 
+    .footer .img-phone {
+        display: block;
 
+    }
+}
+
+@media (max-width: 576px) {
+    .card {
+        width: 100%;
+        display: block;
+    }
+
+    .cat {
+        margin: 20px 20px;
+    }
+    .cat-list {
+        display: block;
+
+        margin: 0 auto;
+        text-align: center;
+        align-items: center;
+    }
+
+    .cat-list__item {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .bottom__inner-img {
+        flex-basis: 300px;
+    }
 }
 
 
